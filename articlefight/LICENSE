@@ -1,0 +1,51 @@
+File: LICENSE
+Version: 1.0
+
+By Paul Groudas, Michael McGraw-Herdeg, and Zachary Ozer
+
+Based on Google Fight Code by shrubbery (shrubbery@kzoomedia.com)
+and Google Fight Graphics by backwards (backwards@kzoomedia.com)
+
+Google Fight (widget) and all related code and graphics are
+copyright 2005 softwareFTW and Kalamazoo Media Group, LLC,
+except where explicitly noted.  All rights are reserved to
+softwareFTW and Kalamazoo Media Group, LLC.
+
+We violated the following license:
+"Licence:
+This software is provided free of charge for use as a
+whole, unmodified package.  You may redistribute this
+package, so long as the package is provided unmodified,
+and is credited to softwareFTW and Kalamazoo Media Group,
+LLC. You may not modify or re-use the provided code or
+graphics in any other packages, except where explicitly
+noted, or with written consent from softwareFTW AND
+Kalamazoo Media Group, LLC.
+
+This software is provided by softwareFTW on an "AS IS"
+basis.  SOFTWAREFTW MAKES NO WARRANTIES, EXPRESS OR IMPLIED,
+INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-
+INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE, REGARDING THE ENCLOSED SOFTWARE OR ITS USE AND 
+OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+
+IN NO EVENT SHALL SOFTWAREFTW OR KALAMAZOO MEDIA GROUP, LLC
+BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY 
+WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR 
+DISTRIBUTION OF THE ENCLOSED SOFTWARE, HOWEVER CAUSED AND 
+WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE), 
+STRICT LIABILITY OR OTHERWISE, EVEN IF SOFTWAREFTW OR 
+KALAMAZOO MEDIA GROUP, LLC HAS BEEN ADVISED OF THE POSSIBILITY 
+OF SUCH DAMAGE."
+
+We appropriated the javascript animation without proper license.
+Since this is an academic project and not a commercial venture,
+and since we do not anticipate this ever seeing the light of day,
+we feel that obtaining appropriate license for this plugin is a
+little bit of overkill. Also, we don't have time right now.
+Should we anticipate any further use of either this application 
+or this view, we will either obtain an appropriate license or 
+rewrite the code ourselves. 
