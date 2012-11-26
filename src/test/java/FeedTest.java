@@ -7,8 +7,8 @@ import java.util.Date;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import model.Article;
-import model.Feed;
+import com.rssoap.model.Article;
+import com.rssoap.model.Feed;
 
 /**
  * JUnit test case for FeedTest

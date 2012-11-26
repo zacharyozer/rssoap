@@ -1,7 +1,7 @@
 package tests;
 
 import junit.framework.*;
-import model.Folder;
+import com.rssoap.model.Folder;
 
 /**
  * JUnit test case for FolderTest

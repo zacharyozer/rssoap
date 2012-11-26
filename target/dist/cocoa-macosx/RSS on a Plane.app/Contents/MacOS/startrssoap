@@ -1,0 +1,4 @@
+#!/bin/bash
+BASEDIR=`dirname "$0"`
+cd "$BASEDIR"
+exec java -Djava.library.path=. -XstartOnFirstThread -jar rssplane.jar

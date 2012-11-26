@@ -1,0 +1,88 @@
+<project name="rssoap" default="dist" basedir="../">
+    <property name="src.dir" location="${basedir}/src/main/java"/>
+    <property name="bin.dir" location="${basedir}/target/bin"/>
+    <property name="application.package" value="com/rssoap" />
+    <property name="dist.dir"  location="${basedir}/target/dist"/>
+    <property name="doc.dir"  location="${basedir}/target/doc"/>
+    <property name="lib.dir"  location="${basedir}/src/main/resources/lib"/>
+    <property name="static.dir"  location="${basedir}/src/main/resources/static"/>
+
+    <path id="jars">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+        <file file="${lib.dir}/${swt.lib}/swt.jar" />
+    </path>
+
+    <target name="init">
+        <mkdir dir="${bin.dir}/${swt.lib}/${application.package}"/>
+        <mkdir dir="${dist.dir}/${swt.lib}"/>
+    </target>
+
+
+    <target name="clean" description="clean up" >
+        <delete dir="${bin.dir}/${swt.lib}/${application.package}"/>
+        <!--<delete dir="${dist.dir}"/>-->
+    </target>
+
+    <target name="compile" depends="clean, init" description="compile the source" >
+        <property name="myclasspath" refid="jars"/>
+        <!--<echo message="Classpath = ${myclasspath}"/>-->
+        <javac srcdir="${src.dir}" destdir="${bin.dir}/${swt.lib}/${application.package}" classpathref="jars" />
+    </target>
+
+    <target name="doc" description="creates the javadocs" >
+        <javadoc packagenames="com.rssoap.*"
+                 destdir="${doc.dir}"
+                 sourcepath="${src.dir}"
+                 defaultexcludes="yes"
+                 author="true"
+                 version="true"
+                 use="true"
+                 windowtitle="RSS on a Plane"
+                 >
+            <classpath>
+                <fileset dir="${lib.dir}">
+                    <include name="*.jar"/>
+                    <include name="cocoa-macosx/swt.jar"/>
+                </fileset>
+            </classpath>
+        </javadoc>
+    </target>
+
+    <target name="dist" depends="compile" description="generate the distribution" >
+        <property name="myclasspath" refid="jars"/>
+        <jar jarfile="${dist.dir}/${swt.lib}/rssoap-${swt.lib}.jar" basedir="${bin.dir}/${swt.lib}/${application.package}" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.rssoap.com.rssoap.control.Controller"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${bin.dir}/${swt.lib}/${application.package}"/>
+            <fileset dir="${static.dir}"/>
+            <zipgroupfileset dir="${lib.dir}" excludes="META-INF/*.SF" includes="*.jar"/>
+            <zipgroupfileset excludes="META-INF/*.SF" file="${lib.dir}/${swt.lib}/swt.jar" />
+        </jar>
+    </target>
+
+    <target name="dist-cocoa-macosx" description="generate the mac cocoa app">
+        <antcall target="dist">
+            <param name="swt.lib" value="cocoa-macosx"/>
+        </antcall>
+        <move file="${dist.dir}/cocoa-macosx/rssoap-cocoa-macosx.jar" tofile="${dist.dir}/cocoa-macosx/RSS on a Plane.app/Contents/MacOS/rssplane.jar" overwrite="true" />
+        <zip basedir="${dist.dir}/cocoa-macosx" destfile="${dist.dir}/rssoap-cocoa-macosx.zip"/>
+    </target>
+    
+    <target name="dist-gtk-linux-x86" description="generate the gtk linux app">
+        <antcall target="dist">
+            <param name="swt.lib" value="gtk-linux-x86"/>
+        </antcall>
+        <zip basedir="${dist.dir}/gtk-linux-x86" destfile="${dist.dir}/rssoap-gtk-linux-x86.zip"/>
+    </target>
+
+    <target name="dist-win32-win32-x86" description="generate the win32 win32 app">
+        <antcall target="dist">
+            <param name="swt.lib" value="win32-win32-x86"/>
+        </antcall>
+        <zip basedir="${dist.dir}/win32-win32-x86" destfile="${dist.dir}/rssoap-win32-win32-x86.zip"/>
+    </target>
+    
+    
+</project>

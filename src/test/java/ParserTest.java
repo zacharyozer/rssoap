@@ -11,8 +11,8 @@ import java.util.List;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import model.Feed;
-import parser.RomeFeedParser;
+import com.rssoap.model.Feed;
+import com.rssoap.parser.RomeFeedParser;
 
 import com.sun.syndication.io.FeedException;
 

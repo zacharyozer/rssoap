@@ -5,7 +5,7 @@ import java.util.Date;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import model.Article;
+import com.rssoap.model.Article;
 
 /**
  * JUnit test case for ArticleTest

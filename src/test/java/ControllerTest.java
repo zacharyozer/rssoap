@@ -6,13 +6,13 @@ import java.util.List;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import model.Article;
-import model.Feed;
-import model.Folder;
-import control.ControlException;
-import control.Controller;
-import derby.DBHandler;
-import derby.DBHandlerException;
+import com.rssoap.model.Article;
+import com.rssoap.model.Feed;
+import com.rssoap.model.Folder;
+import com.rssoap.control.ControlException;
+import com.rssoap.control.Controller;
+import com.rssoap.derby.DBHandler;
+import com.rssoap.derby.DBHandlerException;
 
 public class ControllerTest extends TestCase {
 	Controller controller;
